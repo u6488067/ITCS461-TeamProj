@@ -120,10 +120,6 @@ def paste_text():
 def select_all():
     text.tag_add(tk.SEL, "1.0", tk.END)
     
-def delete_text():
-    start_index = text.index(tk.SEL_FIRST)
-    end_index = text.index(tk.SEL_LAST)
-    text.delete(start_index, end_index)
 
 def find_text():
     find_text = simpledialog.askstring("Find", "Enter text to find:")
@@ -188,7 +184,6 @@ menu.add_cascade(label="Edit", menu=edit_menu)
 edit_menu.add_command(label="Copy", command=copy_text)
 edit_menu.add_command(label="Cut", command=cut_text)
 edit_menu.add_command(label="Paste", command=paste_text)
-edit_menu.add_command(label="Delete", command=delete_text)
 edit_menu.add_separator()
 edit_menu.add_command(label="Find", command=find_text)
 edit_menu.add_command(label="Replace", command=replace_text)
